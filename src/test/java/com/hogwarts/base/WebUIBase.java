@@ -7,7 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
 import java.io.*;
 import java.util.Properties;
 
@@ -16,12 +15,12 @@ public abstract class WebUIBase {
     private String propFileName = "iselenium.properties";
 
     protected String testcaseName = "";
-    protected String curBrowser = "firefox"; //默认浏览器是firefox
+    protected String curBrowser = "nogui"; //默认浏览器是firefox
+//    protected String curBrowser = "chrome";
     protected WebDriver driver;
     protected WebDriver.Navigation navigation;
     protected String firefoxPath = "";
     protected String chromePath = "";
-
     protected int waitTime = 15;
 
     @BeforeEach
