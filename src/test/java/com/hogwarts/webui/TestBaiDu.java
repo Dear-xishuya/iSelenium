@@ -34,15 +34,15 @@ public class TestBaiDu extends WebUIBase {
         //浏览器中打开百度
         logger.info("Open the www.baidu.com");
         navigation.to("http://www.baidu.com");
-        wait5s();
+        wait2s();
 
         //输入搜索内容：Selenium
         WebUITasks.inputText(checkString,driver);
-        wait5s();
+        wait2s();
 
         //单击搜索按钮
         WebUITasks.clickSearchBtn(driver);
-        wait5s();
+        wait2s();
 
         String browserTitle = driver.getTitle();
         Assertions.assertTrue(browserTitle.contains(checkString), "Check if the web page contains the key word ‘" + checkString + "’");
