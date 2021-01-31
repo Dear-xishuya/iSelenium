@@ -20,7 +20,7 @@ public abstract class WebUIBase {
     private String propFileName = "iselenium.properties";
 
     protected String testcaseName = "";
-    protected String curBrowser = "firefox"; //默认浏览器是firefox
+    protected String curBrowser = "默认浏览器是firefox"; //默认浏览器是firefox
     protected WebDriver driver;
     protected WebDriver.Navigation navigation;
     protected String firefoxPath = "";
@@ -51,8 +51,8 @@ public abstract class WebUIBase {
 
         //构造webdriver
         if (curBrowser.equalsIgnoreCase("firefox")) {
-            System.setProperty("webdriver.firefox.bin", firefoxPath);
-            System.setProperty("javax.xml.parsers.DocumentBuilderFactory", "com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl");
+            System.setProperty("webdriver.gecko.driver", firefoxPath);
+//            System.setProperty("javax.xml.parsers.DocumentBuilderFactory", "com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl");
             driver = new FirefoxDriver();
         } else if (curBrowser.equalsIgnoreCase("chrome")) {
             System.setProperty("webdriver.chrome.driver", chromePath);
@@ -65,8 +65,8 @@ public abstract class WebUIBase {
         } else if (curBrowser.equalsIgnoreCase("docker")) {
             driver = new RemoteWebDriver(new URL(dockerRemote), DesiredCapabilities.chrome());
         } else {
-            System.setProperty("webdriver.firefox.bin", firefoxPath);
-            System.setProperty("javax.xml.parsers.DocumentBuilderFactory", "com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl");
+            System.setProperty("webdriver.gecko.driver", firefoxPath);
+//            System.setProperty("javax.xml.parsers.DocumentBuilderFactory", "com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl");
             driver = new FirefoxDriver();
         }
 
