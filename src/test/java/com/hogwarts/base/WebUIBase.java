@@ -20,7 +20,7 @@ public abstract class WebUIBase {
     private String propFileName = "iselenium.properties";
 
     protected String testcaseName = "";
-    protected String curBrowser = "默认浏览器是firefox"; //默认浏览器是firefox
+    protected String curBrowser = "docker"; //默认浏览器是firefox
     protected WebDriver driver;
     protected WebDriver.Navigation navigation;
     protected String firefoxPath = "";
